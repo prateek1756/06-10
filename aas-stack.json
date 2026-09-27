@@ -1,0 +1,1 @@
+{"catalog":{"integrity":"sha256-eb1b66285d46ec00da1844e6876b4ae8839b01885b35694b2236c23a9b064eaa","package":"agentic-awesome-skills","version":"18.4.0"},"name":"aas-stack","profile":{"constraints":[],"frameworks":[],"goals":["Web development and debugging"],"languages":[]},"schemaVersion":2,"skills":[],"targets":[{"host":"codex","scope":"project"}]}
