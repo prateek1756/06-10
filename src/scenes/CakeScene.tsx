@@ -475,7 +475,7 @@ export const CakeScene: React.FC<Props> = ({ onDone }) => {
               }}
               aria-label="Continue to your gifts"
             >
-              <span>Unwrap Your Gifts 🎁</span>
+              <span>Spin The Golden Wheel 🎡</span>
               <ArrowRight size={18} />
             </button>
           </div>

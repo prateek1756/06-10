@@ -23,3 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 *.zip
+*.mp4
+new_photos/
+images of website/
+
