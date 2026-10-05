@@ -2578,9 +2578,11 @@ button {
 
 .polaroids-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-  gap: 28px 22px;
+  grid-template-columns: repeat(auto-fill, minmax(min(48%, 210px), 1fr));
+  gap: 36px 16px;
   margin-bottom: 45px;
+  /* Extra top padding so the tape (position: absolute; top: -10px) doesn't clip */
+  padding-top: 14px;
 }
 
 .polaroid-card {
@@ -2598,6 +2600,59 @@ button {
   transform: translateY(-8px) scale(1.04) rotate(0deg) !important;
   box-shadow: 0 18px 35px rgba(0, 0, 0, 0.6), 0 0 25px rgba(240, 204, 106, 0.4);
   z-index: 10;
+}
+
+/* ── Mobile: 2-col grid, no rotation (prevents clipping), sensible sizing ── */
+@media (max-width: 600px) {
+  .gallery-scene {
+    padding: 70px 12px 50px;
+  }
+
+  .gallery-content {
+    width: 100%;
+    padding: 0;
+  }
+
+  .polaroids-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 10px;
+    padding-top: 16px;
+  }
+
+  /* Kill rotations on mobile — they cause edge overflow in 2-col grid */
+  .polaroid-card {
+    transform: none !important;
+  }
+
+  .polaroid-card:hover {
+    transform: scale(1.02) !important;
+  }
+
+  .polaroid-title {
+    font-size: 15px;
+  }
+
+  /* Lightbox fills screen on mobile */
+  .lightbox-overlay {
+    padding: 0;
+    align-items: flex-end;
+  }
+
+  .lightbox-card {
+    border-radius: 20px 20px 0 0;
+    max-width: 100%;
+    max-height: 95dvh;
+    overflow-y: auto;
+  }
+
+  .lightbox-img-box {
+    max-height: 55vmax;
+  }
+
+  .gallery-proceed-btn {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 .polaroid-tape {
